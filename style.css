@@ -11,6 +11,7 @@ en las secciones señaladas */
    --color-de-texto: white;
    --color-de-texto-al: #00acee;
    --color-de-link: #000;
+   --color-warning: #ff0f0f;
 }
 
 html {
@@ -443,7 +444,7 @@ form.formcontacto__form {
     gap: 1.5rem;
 }
 
-.formcontacto__input-label{
+.formcontacto__input-label, .formcontacto__textarea-label{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -479,6 +480,31 @@ form.formcontacto__form {
     color: #2A7AE4;
 }
 
+.formcontacto__input-label--invalid{
+    margin-bottom: 0.5rem;
+}
+
+.formcontacto__input-label--invalid .formcontacto__input{
+    border: 1px solid var(--color-warning);
+    border-radius: 7px;
+}
+
+.formcontacto__input-label--invalid .formcontacto__span{
+    top: 10px;
+    color: var(--color-warning);
+}
+
+.input-mensaje-error {
+    display: none;
+}
+
+.formcontacto__input-label--invalid .input-mensaje-error{
+    color: var(--color-warning);
+    display: block;
+    margin-top: 0.5rem;
+    padding-left: .5rem;
+}
+
 .formcontacto__textarea{
     border: none;
     padding: 15px 10px;
@@ -502,6 +528,27 @@ form.formcontacto__form {
     color: #2A7AE4;
 }
 
+.formcontacto__textarea-label--invalid .formcontacto__textarea {
+    border: 1px solid var(--color-warning);
+    border-radius: 7px;
+}
+
+.formcontacto__textarea-label--invalid .formcontacto__span {
+    top: 10px;
+    color: var(--color-warning);
+}
+
+.textarea-mensaje-error {
+    color: var(--color-warning);
+    display: none;
+    margin-top: 0.5rem;
+    padding-left: .5rem;
+}
+
+.formcontacto__textarea-label--invalid .textarea-mensaje-error {
+    display: block;
+}
+
 .formcontacto__input-label input:focus,textarea:focus{
     box-shadow: 0 4px 0 0 var(--color-de-fondo);
 }
@@ -520,6 +567,13 @@ button.formcontacto__boton{
     background-color: #70adfc;
     cursor: pointer;
 }
+
+.mensaje-enviado > p{
+    padding: .3rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
 /*footeer*/
 
 section.footer{

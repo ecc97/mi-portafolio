@@ -239,31 +239,38 @@
                 </div>
                 <div class="formcontacto__text">
                     <h2 class="formcontacto__title">Contacto</h2>
-                    <form class="formcontacto__form" name="form">
+                    <form class="formcontacto__form" name="form" id="form">
 
                         <label class="formcontacto__input-label">
-                            <input class="formcontacto__input" type="text" name="nombre" pattern="[A-Za-z]+" required>
+                            <input class="formcontacto__input" type="text" name="nombre" required data-tipo="nombre">
                             <span class="formcontacto__span">Nombre</span>
+                            <span class="input-mensaje-error"></span>
                         </label>
 
                         <label for="email" class="formcontacto__input-label">
-                            <input class="formcontacto__input" type="email" name="email" id="email" required>
+                            <input class="formcontacto__input" type="email" name="email" id="email" required data-tipo="email">
                             <span class="formcontacto__span">E-mail</span>
+                            <span class="input-mensaje-error"></span>
                         </label>
 
                         <label for="asunto" class="formcontacto__input-label">
-                            <input class="formcontacto__input" type="text" name="asunto" id="asunto" maxlength="50" required>
+                            <input class="formcontacto__input" type="text" name="asunto" id="asunto" required pattern="[\s\S]{3,30}" data-tipo="asunto">
                             <span class="formcontacto__span">Asunto</span>
+                            <span class="input-mensaje-error"></span>
                         </label>
 
-                        <label for="mensaje" class="formcontacto__input-label">
+                        <label for="mensaje" class="formcontacto__textarea-label">
                             <textarea class="formcontacto__textarea" rows="5" cols="40" id="mensaje" name="mensaje" maxlength="200" required></textarea>
                             <span class="formcontacto__span">Mensaje</span>
+                            <span class="textarea-mensaje-error"></span>
                         </label>
 
                         <button type="submit" class="formcontacto__boton">Enviar mensaje</button>
 
                     </form>
+                    <div class="mensaje-enviado">
+                        <p id="mostrar-accion"></p>
+                    </div>
                 </div>
             </div>
         </section>
